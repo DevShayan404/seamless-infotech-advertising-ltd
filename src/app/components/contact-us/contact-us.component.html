@@ -1,0 +1,226 @@
+<section>
+  <div class="header d-flex align-items-center pt-5">
+    <div class="container text-center text-sm-center text-lg-start">
+      <div class="row mt-4 mt-sm-4 mt-lg-0">
+        <div
+          class="col-12 col-sm-12 col-lg-5 mt-5 mt-sm-5 mt-lg-0 text-center text-sm-center text-lg-start"
+        >
+          <h2>Contact us</h2>
+          <h5 class="mt-4">
+            Start the conversation to established good relationship and
+            business.
+          </h5>
+        </div>
+      </div>
+      <img
+        width="400"
+        src="assets\images\all-1.png"
+        loading="lazy"
+        class="image-fluid"
+      />
+    </div>
+  </div>
+</section>
+<section>
+  <div class="form-main section-padding">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-12 col-sm-12 col-lg-6">
+          <form
+            class="p-5 rounded-4"
+            [formGroup]="contactForm"
+            (ngSubmit)="submit()"
+          >
+            <h2>Send us a message!</h2>
+            <div class="row g-3 mt-3">
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder=" "
+                    formControlName="name"
+                    [ngClass]="{ 'is-invalid': isControlInvalid('name') }"
+                  />
+                  <label for="floatingInput">Name</label>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder=" "
+                    formControlName="company"
+                    [ngClass]="{ 'is-invalid': isControlInvalid('company') }"
+                  />
+                  <label for="floatingInput">Company</label>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="form-floating">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder=" "
+                    formControlName="phone"
+                    [ngClass]="{ active: isControlInvalid('phone') }"
+                  />
+                  <label for="floatingInput">Phone</label>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-lg-6">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder=" "
+                    formControlName="email"
+                    [ngClass]="{ 'is-invalid': isControlInvalid('email') }"
+                  />
+                  <label for="floatingInput">E-mail </label>
+                </div>
+              </div>
+              <ng-select
+                [items]="serviceList"
+                bindLabel="name"
+                bindValue="name"
+                placeholder="Select Service"
+                formControlName="service"
+                [ngClass]="{ 'is-invalid': isControlInvalid('service') }"
+              >
+              </ng-select>
+              <div class="col-12">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder=" "
+                    formControlName="subject"
+                    [ngClass]="{ 'is-invalid': isControlInvalid('subject') }"
+                  />
+                  <label for="floatingInput">Subject</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    id="floatingTextarea"
+                    placeholder=" "
+                    style="min-height: 100px"
+                    formControlName="message"
+                    [ngClass]="{ 'is-invalid': isControlInvalid('message') }"
+                  ></textarea>
+                  <label for="floatingTextarea">Message</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <re-captcha
+                  (resolved)="onCaptchaResolved($event)"
+                  siteKey="6LcwvkYqAAAAAP89Req618V0P8EvsksJUoixfHcl"
+                >
+                </re-captcha>
+                <div
+                  *ngIf="
+                    contactForm.controls['recaptcha'].invalid &&
+                    contactForm.controls['recaptcha'].touched
+                  "
+                >
+                  Please verify that you're not a robot.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-primary">
+                  Send Message @if (spinner) {
+                  <div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  }
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-6">
+          <h6>GET IN TOUCH</h6>
+          <h2>Seamless Communication, Global Impact</h2>
+          <p>
+            At Seamless Infotech & Advertising Ltd., we believe in the power of
+            seamless communication to drive global success. Our expert team is
+            dedicated to delivering innovative digital solutions that transform
+            businesses and foster global growth. Whether you need cutting-edge
+            software, dynamic mobile apps, or a stunning website, we're here to
+            help you navigate the digital landscape with ease. Connect with us
+            today to discover how we can make a lasting impact together.
+          </p>
+
+          <div class="row pt-4">
+            <div class="col-12 d-flex">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div class="ms-3">
+                <h5>Head OFfice</h5>
+                <p>71-75 Shelton Street Convent Garden London WC2H 9JQ - UK</p>
+              </div>
+            </div>
+            <!-- <div class="col-6 d-flex">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div class="ms-3">
+                <h5>Head OFfice</h5>
+                <p>Jln Cempaka Wangi No 22 Jakarta - Indonesia</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div class="ms-3">
+                <h5>Head OFfice</h5>
+                <p>Jln Cempaka Wangi No 22 Jakarta - Indonesia</p>
+              </div>
+            </div>
+            <div class="col-6 d-flex">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div class="ms-3">
+                <h5>Head OFfice</h5>
+                <p>Jln Cempaka Wangi No 22 Jakarta - Indonesia</p>
+              </div>
+            </div> -->
+          </div>
+          <hr />
+          <h5>Follow Our Social Media :</h5>
+          <div class="d-flex align-items-center mt-3">
+            <i class="bi bi-facebook custom"></i>
+            <i class="bi bi-twitter-x ms-2 custom"></i>
+            <i class="bi bi-linkedin ms-2 custom"></i>
+            <i class="bi bi-instagram ms-2 custom"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="map-main section-padding-last">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <iframe
+            class="rounded-4"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9763191185857!2d-0.13007621908697486!3d51.51365044796538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604ccc2a68281%3A0x70980f5450862f57!2s71-75%20Shelton%20St%2C%20London%20WC2H%209JQ%2C%20UK!5e0!3m2!1sen!2s!4v1726051036478!5m2!1sen!2s"
+            height="350"
+            style="width: 100%"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+[
+  {
+    "review": "Seamless Infotech delivered an outstanding mobile app and revamped our website beautifully. Their IT consultancy was spot-on. Highly recommend!",
+    "name": "Sarah Johnson",
+    "img": "assets/images/avatar2.webp"
+  },
+  {
+    "review": "Great experience with Seamless Infotech! Their software development and website design are top-quality. Fantastic IT consultancy as well!",
+    "name": "Michael Lee",
+    "img": "assets/images/avatar.webp"
+  },
+  {
+    "review": "Seamless Infotech provided innovative solutions and exceptional support throughout. Our app and website look amazing. Highly recommended!",
+    "name": "David Martinez",
+    "img": "assets/images/avatar3.webp"
+  }
+]

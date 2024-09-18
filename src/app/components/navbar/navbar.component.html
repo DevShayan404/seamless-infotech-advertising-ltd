@@ -1,0 +1,83 @@
+<nav [ngClass]="{ fixed: scrolled, sticky: !scrolled }">
+  <div class="container">
+    <div class="row align-items-center pt-2 ps-3 ps-md-0">
+      <div class="col">
+        <img
+          src="assets\images\seamless-logo.png"
+          class="image-fluid"
+          (click)="setActiveLink(0, 'Home')"
+        />
+      </div>
+      <div class="col d-none d-sm-none d-md-block">
+        <div class="d-flex justify-content-end">
+          <ul class="nav me-4">
+            @for (link of navLinks; track link; let i = $index) {
+            <li
+              class="nav-item"
+              style="cursor: pointer"
+              (click)="setActiveLink(i, link)"
+            >
+              <a class="nav-link" [class.active]="i === activeLink">{{
+                link
+              }}</a>
+            </li>
+            }
+          </ul>
+          <button class="btn btn-primary" routerLink="contact-us">
+            Get Qoute
+          </button>
+        </div>
+      </div>
+      <div class="col d-block d-sm-block d-md-none">
+        <div class="d-flex justify-content-end">
+          <i
+            style="font-size: 36px"
+            class="bi bi-list"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasRight"
+            role="button"
+            aria-controls="offcanvasRight"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- ------Sidebar------ -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+  style="width: 100%"
+>
+  <div class="offcanvas-header mx-3">
+    <img
+      width="160"
+      class="offcanvas-title image-fluid"
+      id="offcanvasRightLabel"
+      src="assets\images\seamless-logo.png"
+    />
+
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body mx-3">
+    <ul class="sidebar-ul">
+      @for (link of navLinks; track link; let i = $index) {
+      <li
+        [class.sidebarActive]="i === activeLink"
+        (click)="setActiveLink(i, link)"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      >
+        <a>{{ link }}</a>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

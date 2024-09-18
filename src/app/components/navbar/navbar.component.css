@@ -1,0 +1,73 @@
+/* Sticky CSS 
+============== */
+nav {
+  transition: 0.4s ease-in-out;
+  background: transparent;
+}
+.sticky {
+  background: transparent;
+  z-index: 999 !important;
+  transition: 0.4s ease-in-out;
+  margin-top: 0;
+  position: fixed;
+  width: 100%;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
+  z-index: 999;
+  transition: 0.4s ease-in-out;
+  padding: 0 0 5px;
+}
+
+nav .container {
+  /* position: relative; */
+}
+nav .container .row {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100%;
+}
+.nav-link {
+  color: #3c3c3c;
+  font-weight: 500;
+}
+nav .container .row img.image-fluid {
+  width: 240px;
+  cursor: pointer;
+}
+.active {
+  color: var(--primary-color);
+}
+.sidebar-ul li {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 4px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+.sidebar-ul li:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+.sidebar-ul li a {
+  font-size: 14px;
+}
+.sidebarActive {
+  background: var(--secondary-color) !important;
+  color: #fff;
+}
+@media (max-width: 576px) {
+  nav .container .row img.image-fluid {
+    width: 200px;
+    /* padding: 0 0 0 10px; */
+  }
+  .fixed {
+    padding: 5px 0;
+  }
+}

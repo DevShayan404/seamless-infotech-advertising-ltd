@@ -1,0 +1,38 @@
+[
+  {
+    "img": "assets/images/featured-1.webp",
+    "tittle": "Digital Marketing Strategy",
+    "name": "Social Media Campaign",
+    "detail": "Launched a successful social media campaign that increased brand awareness and engagement."
+  },
+  {
+    "img": "assets/images/featured-3.webp",
+    "tittle": "Innovative Web Design",
+    "name": "E-commerce Platform",
+    "detail": "Designed and developed a high-performance e-commerce platform with a sleek, user-friendly interface."
+  },
+  {
+    "img": "assets/images/featured-2.webp",
+    "tittle": "Custom Software Solutions",
+    "name": "Inventory Management System",
+    "detail": "Developed a custom inventory management system to streamline operations and improve efficiency."
+  },
+  {
+    "img": "assets/images/featured-4.webp",
+    "tittle": "User Experience Design",
+    "name": "Travel Agency Website",
+    "detail": "Crafted a visually appealing and easy-to-navigate website for a travel agency, enhancing user experience."
+  },
+  {
+    "img": "assets/images/featured-5.webp",
+    "tittle": "Advanced Analytics",
+    "name": "Data Visualization Tool",
+    "detail": "Developed an advanced data visualization tool to help businesses make data-driven decisions."
+  },
+  {
+    "img": "assets/images/featured-6.webp",
+    "tittle": "Mobile App Development",
+    "name": "Fitness Tracker App",
+    "detail": " Created a feature-rich fitness tracking app with real-time analytics and user-friendly design."
+  }
+]
