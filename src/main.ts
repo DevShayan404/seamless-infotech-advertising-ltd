@@ -8,11 +8,12 @@ bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err))
   .then(() => {
     const body = document.querySelector('body');
-    if (body) {
-      body.classList.add('app-loaded');
-    }
+    // setTimeout(() => {
+      if (body) {
+        body.classList.add('app-loaded');
+      }
+    // }, 3000);
   });
-
 
 //   /// <reference types="@angular/localize" />
 
