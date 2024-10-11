@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import {
   NgLabelTemplateDirective,
   NgOptionTemplateDirective,
@@ -15,7 +15,7 @@ import { SharingService } from '../../core/services/sharing.service';
 import { CommonModule } from '@angular/common';
 import { ContactUsService } from '../../core/services/contact-us.service';
 import { ToastrService } from 'ngx-toastr';
-import { RecaptchaModule } from 'ng-recaptcha';
+import { RecaptchaModule, RecaptchaComponent } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-contact-us',
@@ -60,8 +60,8 @@ export class ContactUsComponent {
   }
   spinner: boolean = false;
   message: boolean = false;
+  @ViewChild('recaptcha') recaptcha!: RecaptchaComponent;
   submit() {
-    console.log(this.contactForm.value.recaptcha);
     // if (this.contactForm.valid && this.captchaResponse) {
     if (this.contactForm.valid) {
       this.spinner = true;
@@ -77,9 +77,10 @@ export class ContactUsComponent {
         })
         .subscribe({
           next: (res) => {
-            this.contactForm.reset();
             this.toastr.success('Form has been submitted.', 'Success!');
             this.spinner = false;
+            this.contactForm.reset();
+            this.recaptcha.reset();
           },
         });
     } else {
@@ -98,8 +99,6 @@ export class ContactUsComponent {
   }
 
   onCaptchaResolved(captchaResponse: string | null) {
-    console.log(captchaResponse);
-
     this.contactForm.controls['recaptcha'].setValue(captchaResponse);
   }
 }
